@@ -127,14 +127,17 @@ const Main = () => {
     return (
         <>
             {Loading === true && (
-                <body>
+                <>
+                    <body>
                     <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
                         <Lottie params={{path: jsonURL}} width={'300px'} height={'300'}/>
                     </div>
-                </body>
+                    </body>
+                </>
             )}
             {Loading === false && (
-                <body>
+                <>
+                    <body>
                     <Carousel style={style} theme='dark'>
                         {
                             imgList.map((src, index) => {
@@ -156,7 +159,8 @@ const Main = () => {
                     </Carousel>
                     <br/><br/>
                     <Button onClick={switchMode}>切换模式</Button>
-                </body>
+                    </body>
+                </>
             )}
         </>
     );
